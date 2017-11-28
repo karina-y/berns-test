@@ -1,0 +1,43 @@
+/*
+created by: karina
+created date: 11/27/17
+*/
+
+@import "./variables.less";
+
+div.main-video {
+  text-align: center;
+
+  //clappr player
+  & > div {
+    padding-bottom: 100%;
+  }
+
+  & > .fa {
+    font-size: 30em;
+  }
+
+  @media @breakpoint-xs {
+    & > .fa {
+      font-size: 22em;
+    }
+
+    & > div {
+      width: 90vw;
+      margin: 0 auto;
+    }
+  }
+
+  @media @breakpoint-sm {
+    & > div {
+      width: 70vw;
+      margin: 0 auto;
+    }
+  }
+
+  @media @breakpoint-md {
+    & > div {
+      width: unset;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+/*
+created by: karina
+created date: 11/27/17
+*/
+
+@import './variables.less';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+  div#react-root {
+
+    div.page-root {
+
+      & > div {
+        margin-top: 50px;
+      }
+
+      //#region helpers
+      .vertical-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      //#endregion
+
+      .custom-scrollbar {
+
+        ::-webkit-scrollbar {
+          width: 20px;
+        }
+        ::-webkit-scrollbar-track {
+          background: @brand-white-gray;
+          border-left: 7px solid @brand-white;
+          border-right: 7px solid @brand-white;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: @brand-orange;
+          border-radius: 8px;
+          border-left: 5px solid @brand-white;
+          border-right: 5px solid @brand-white;
+        }
+      }
+
+    }
+  }
+}

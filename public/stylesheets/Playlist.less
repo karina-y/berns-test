@@ -1,0 +1,128 @@
+/*
+created by: karina
+created date: 11/27/17
+*/
+
+
+@import './variables.less';
+
+.playlist {
+  color: @brand-gray-dark;
+
+  .dual-panel-container {
+
+    .left-panel {
+
+      & > .video-container {
+        position: relative;
+      }
+    }
+
+  }
+
+  .shadow-panel-title {
+
+    margin-bottom: 20px;
+    background-color: @brand-white;
+
+    & > h3 {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      text-transform: uppercase;
+      margin: 10px 0;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+
+      & > .go-back {
+        cursor: pointer;
+        position: absolute;
+        left: 10px;
+      }
+    }
+  }
+
+
+  //mobile specific styles, declaring here to avoid repetition in both xs and sm breakpoints
+  .mobile-view {
+    display: none;
+  }
+
+  @media only screen and (max-width: 500px) {
+
+    .dual-panel-container {
+
+      .right-panel {
+
+        & > .playlist-panel {
+
+          & > .video-thumbnails {
+            & > div {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media @breakpoint-xs {
+
+    //mobile
+    .mobile-view {
+      display: block;
+
+      &.inactive {
+        display: none;
+      }
+    }
+
+  }
+
+  @media @breakpoint-sm {
+
+    //mobile
+    .mobile-view {
+      display: block;
+
+      &.inactive {
+        display: none;
+      }
+    }
+  }
+
+  //dual paneled here
+  @media @breakpoint-md {
+
+    //keeping the right panel the same height as its sibling and scrolling any overflow
+    .dual-panel-container {
+      display: flex;
+      position: relative;
+
+      .left-panel {
+        flex: 0 0 50%;
+        box-sizing: border-box;
+      }
+
+      .right-panel {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        overflow: auto;
+        width: auto;
+      }
+    }
+
+    //mobile
+    .mobile-view {
+      display: none;
+
+      &.right-panel, &.left-panel {
+        display: block;
+      }
+    }
+
+  }
+
+}
